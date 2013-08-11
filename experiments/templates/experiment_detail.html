@@ -6,7 +6,7 @@
 <header>
   <h1>{{ experiment.name }} (<a href="/">back</a>)</h1>
   {% if experiment.get_average_k %}
-  <h3>Average K: {{ experiment.get_average_k|floatformat:6 }} / ms</h3>
+  <h3>Average K: {{ experiment.get_average_k|floatformat:10 }}</h3>
   {% endif %}
 </header>
 

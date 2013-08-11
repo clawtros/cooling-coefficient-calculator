@@ -24,6 +24,7 @@ var graph = function(data) {
 	.x(function(d) { return x(d.t); })
 	.y(function(d) { return y(d.temperature); });
 
+
     var estimate_line = d3.svg.line()
 	.x(function(d) { return x(d.t); })
 	.y(function(d) { return y(d.estimate); });
@@ -52,11 +53,14 @@ var graph = function(data) {
 	.style("text-anchor", "end")
 	.text("temperature");
 
-    svg.append("path")
-	.datum(data)
-	.attr("class", "line")
-	.attr("d", line);
-
+    svg.selectAll(".dot")
+	.data(data)
+	.enter().append("circle")
+	.attr("class", "dot")
+	.attr("r", 3.5)
+	.attr("cx", function(d) { return x(d.t); })
+	.attr("cy", function(d) { return y(d.temperature); })
+	.style("fill", function(d) { return "red"; });
 
     svg.append("path")
 	.datum(data)
