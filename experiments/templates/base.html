@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Experiments</title>
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.estimate_line {
+  fill: none;
+  stroke: blue;
+  stroke-width: 1.5px;
+}
+
+</style>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    {% block postscript %}
+    {% endblock %}
+
+  </head>
+  <body>
+
+    <div class="container">
+      {% block content %}
+      
+      {% endblock %}
+    </div>
+  </body>
+
+
+</html>

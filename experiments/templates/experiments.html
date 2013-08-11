@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block content %}
+<header>
+  <h1>experiments</h1>
+  <ul>
+    {% for experiment in experiments %}
+    <li><a href="{% url 'experiment_detail' experiment_id=experiment.id %}">{{experiment.name}}</a></li>
+    {% endfor %}
+  </ul>
+</header>
+<form class="form" method="post" action="">
+  {% csrf_token %}
+  {{ form|bootstrap }}
+  <button class="btn" type="submit">Submit</button>
+</form>
+{% endblock %}
